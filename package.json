@@ -39,7 +39,7 @@
     "material-ui-chip-input": "^1.1.0",
     "moment": "^2.24.0",
     "normalizr": "^3.5.0",
-    "papaparse": "^4.5.0",
+    "papaparse": "^5.2.0",
     "pinyin-utils": "^1.69.0",
     "react": "^17.0.0",
     "react-autosuggest": "^9.4.3",
