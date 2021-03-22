@@ -96,7 +96,7 @@ const IndexPage = () => {
               title="demo-video"
               width="560"
               height="315"
-              src="https://www.youtube-nocookie.com/embed/Duy8f4bOa-Y"
+              src="https://www.youtube-nocookie.com/embed/mq_w2Qgikt8"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             />
