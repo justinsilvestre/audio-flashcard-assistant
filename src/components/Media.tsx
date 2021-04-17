@@ -201,7 +201,7 @@ const Media = ({
         </video>
       ) : (
         <audio
-          {...props}
+          {...(props as AudioHTMLAttributes<HTMLAudioElement>)}
           ref={playerRef as MutableRefObject<HTMLAudioElement>}
           className={cn(css.audio, css.mediaPlayer)}
         />

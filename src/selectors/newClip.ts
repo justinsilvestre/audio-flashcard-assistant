@@ -27,6 +27,7 @@ export const getNewClipAndCard = <F extends FlashcardFields>(
   const [start, end] = sortClipPoints(pendingClip)
   return {
     clip: {
+      clipwaveType: 'Primary',
       start: +start.toFixed(2),
       end: +end.toFixed(2),
       id,

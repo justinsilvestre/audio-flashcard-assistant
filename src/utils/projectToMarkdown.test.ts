@@ -12,7 +12,7 @@ import files from '../reducers/files'
 import projectToMarkdown from './projectToMarkdown'
 
 import { initialState } from '../reducers/files'
-import { pixelsToMs } from './waveform'
+import { pixelsToMs } from 'clipwave'
 
 export const reducer = combineReducers<AppState>({
   clips,
@@ -43,6 +43,7 @@ describe('projectToMarkdown', () => {
     tags: string[]
   ): { clip: Clip; flashcard: Flashcard } => ({
     clip: {
+      clipwaveType: 'Primary',
       start: pixelsToMs(start, 50),
       end: pixelsToMs(end, 50),
       fileId: mediaFileId,

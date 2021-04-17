@@ -9,6 +9,7 @@ const newClip = (
   fields: TransliterationFlashcardFields
 ): { clip: Clip; card: Flashcard } => ({
   clip: {
+    clipwaveType: 'Primary',
     start,
     end,
     fileId,

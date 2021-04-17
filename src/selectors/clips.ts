@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
 import formatTime from '../utils/formatTime'
-import { msToSeconds } from '../utils/waveform'
+import { msToSeconds } from 'clipwave'
 
 export const getClip = (state: AppState, id: ClipId): Clip | null =>
   state.clips.byId[id]

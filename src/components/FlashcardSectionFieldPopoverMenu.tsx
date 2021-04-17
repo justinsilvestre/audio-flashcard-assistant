@@ -79,7 +79,7 @@ const FlashcardSectionFieldPopoverMenu = ({
               <FieldMenuItem
                 key={track.id}
                 trackId={track.id}
-                label={`External subtitles track ${i + 1}`}
+                label={track.label}
                 selected={linkedSubtitlesTrack === track.id}
                 mediaFileId={mediaFileId}
                 fieldName={fieldName}

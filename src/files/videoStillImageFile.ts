@@ -1,7 +1,7 @@
 import r from '../redux'
 import { FileEventHandlers } from './eventHandlers'
 import { getMidpoint } from '../utils/getVideoStill'
-import { msToSeconds } from '../utils/waveform'
+import { msToSeconds } from 'clipwave'
 
 export default {
   openRequest: async (file, filePath, _state, _effects) => {

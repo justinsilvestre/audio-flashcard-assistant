@@ -21,7 +21,7 @@ import { actions } from '../actions'
 import css from './MainHeader.module.css'
 import { getFileFilters } from '../utils/files'
 import { getKeyboardShortcut } from './KeyboardShortcuts'
-import { PlayButtonSync } from './usePlayButtonSync'
+import { usePlayButtonSync } from 'clipwave'
 
 enum $ {
   chooseFirstMediaFileButton = 'choose-media-file-button',
@@ -33,7 +33,7 @@ enum $ {
 type MediaFilesMenuProps = {
   className: string
   currentProjectId: ProjectId
-  playButtonSync: PlayButtonSync
+  playButtonSync: ReturnType<typeof usePlayButtonSync>
 }
 
 const MediaFilesMenu = ({

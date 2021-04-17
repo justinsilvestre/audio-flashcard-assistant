@@ -27,6 +27,7 @@
     "asar": "0.14.3",
     "better-ajv-errors": "^0.6.7",
     "better-sqlite3": "^7.1.2",
+    "clipwave": "^0.1.5",
     "dataurl": "^0.1.0",
     "dexie": "^3.0.2",
     "electron-devtools-installer": "^3.1.1",

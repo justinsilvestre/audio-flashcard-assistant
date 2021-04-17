@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { pixelsToMs } from './waveform'
+import { pixelsToMs } from 'clipwave'
 
 // TODO: FIX like below
 const toWaveformXRaw = (
