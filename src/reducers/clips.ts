@@ -142,17 +142,13 @@ const clips: Reducer<ClipsState, Action> = (state = initialState, action) => {
           ...state.byId,
           [action.id]: {
             ...existingClip,
-            start: existingClip.start - deltaX,
-            end: existingClip.end - deltaX,
+            start: existingClip.start + deltaX,
+            end: existingClip.end + deltaX,
           },
         },
       }
       return action.overlapIds
-        ? mergeClips(
-            [action.id, ...action.overlapIds],
-            movedState.byId,
-            movedState
-          )
+        ? mergeClips(action.id, action.overlapIds, movedState.byId, movedState)
         : movedState
     }
 
@@ -171,7 +167,32 @@ const clips: Reducer<ClipsState, Action> = (state = initialState, action) => {
     }
 
     case A.mergeClips: {
-      return mergeClips(action.ids, state.byId, state)
+      const [id1, ...ids] = action.ids
+      return mergeClips(id1, ids, state.byId, state)
+    }
+
+    case A.stretchClip: {
+      const stretchedClipId = action.stretchedClip.id
+      const existingClip = state.byId[stretchedClipId]
+      const stretchedState = {
+        ...state,
+        byId: {
+          ...state.byId,
+          [stretchedClipId]: {
+            ...existingClip,
+            start: action.stretchedClip.start,
+            end: action.stretchedClip.end,
+          },
+        },
+      }
+      return action.overlappedClipsIds.length
+        ? mergeClips(
+            action.stretchedClip.id,
+            action.overlappedClipsIds,
+            stretchedState.byId,
+            stretchedState
+          )
+        : stretchedState
     }
 
     case A.deleteCard: {
@@ -310,13 +331,14 @@ const clips: Reducer<ClipsState, Action> = (state = initialState, action) => {
 
 function mergeClips(
   /** should all have same filepath */
-  unsortedIds: ClipId[],
+  finalId: ClipId,
+  idsToBeDiscarded: ClipId[],
   byId: ClipsState['byId'],
   state: ClipsState
 ) {
+  const unsortedIds = [finalId, ...idsToBeDiscarded]
   const ids = unsortedIds.sort(byStart(byId))
   const { fileId } = byId[ids[0]]
-  const [finalId, ...idsToBeDiscarded] = ids
   const clipsOrder = Object.values(byId)
     .sort((a, b) => a.start - b.start)
     .map((s) => s.id)
@@ -479,6 +501,7 @@ function editClip(
         fileId: clip.fileId,
         start: override.start || clip.start,
         end: override.end || clip.end,
+        clipwaveType: 'Primary',
       }
     : clip
 

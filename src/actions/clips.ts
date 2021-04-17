@@ -1,8 +1,24 @@
 import { DeepPartial } from 'redux'
 import { trimClozeRangeOverlaps } from '../utils/clozeRanges'
 import A from '../types/ActionType'
+import { WaveformDrag } from 'clipwave'
 
 export const clipsActions = {
+  [A.addClipRequest]: (waveformDrag: WaveformDrag, clipId: Clip['id']) => ({
+    type: A.addClipRequest,
+    waveformDrag,
+    clipId,
+  }),
+
+  [A.stretchClip]: (
+    stretchedClip: { id: Clip['id']; start: number; end: number },
+    overlappedClipsIds: Array<Clip['id']>
+  ) => ({
+    type: A.stretchClip,
+    stretchedClip,
+    overlappedClipsIds,
+  }),
+
   addClip: (
     clip: Clip,
     flashcard: Flashcard,

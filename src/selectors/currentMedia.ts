@@ -8,7 +8,7 @@ import {
 import { getFlashcard, getClipsObject, getClipsByIds, getClip } from './clips'
 import { getHighlightedClipId } from './session'
 import { createSelector } from 'reselect'
-import { SELECTION_BORDER_MILLISECONDS } from '../utils/waveform'
+import { SELECTION_BORDER_MILLISECONDS } from 'clipwave'
 
 export const getLoopState = (state: AppState) => state.session.loopMedia
 

@@ -178,6 +178,7 @@ function getMediaClips<F extends FlashcardFields>(
     (c): Clip => {
       return {
         id: c.id,
+        clipwaveType: 'Primary',
         start: parseFormattedDuration(c.start).asMilliseconds(),
         end: parseFormattedDuration(c.end).asMilliseconds(),
         fileId: media.id,

@@ -128,7 +128,8 @@ const LinkSubtitlesDialog = ({
       <>
         <p>
           Would you like to link this subtitles track to a specific flashcard
-          field to help you create flashcards? You can always change this later.
+          field to help you create flashcards? (You can change this later in the
+          subtitles menu.)
         </p>
         <h3>{subtitles.name}</h3>
         {chunksDisplay}
@@ -138,7 +139,8 @@ const LinkSubtitlesDialog = ({
         <p>An embedded subtitles track was detected in this media file!</p>
         <p>
           Would you like to link this subtitles track to a specific flashcard
-          field to help you create flashcards? You can always change this later.
+          field to help you create flashcards? (You can change this later in the
+          subtitles menu.)
         </p>
         {chunksDisplay}
       </>

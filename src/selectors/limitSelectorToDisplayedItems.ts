@@ -1,4 +1,4 @@
-import { pixelsToMs } from '../utils/waveform'
+import { pixelsToMs } from 'clipwave'
 
 const MAX_WAVEFORM_VIEWPORT_WIDTH = 3000
 

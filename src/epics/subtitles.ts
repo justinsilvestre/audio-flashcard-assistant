@@ -20,7 +20,7 @@ import { uuid } from '../utils/sideEffects'
 import { areSameFile } from '../utils/files'
 import { SubtitlesFileWithTrack } from '../selectors'
 import { afterUpdates } from '../utils/afterUpdates'
-import { msToSeconds } from '../utils/waveform'
+import { msToSeconds } from 'clipwave'
 
 const makeClipsFromSubtitles: AppEpic = (
   action$,

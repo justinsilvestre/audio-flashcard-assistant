@@ -131,16 +131,20 @@ export const getSubtitlesFilesWithTracks = createSelector(
             }
             case 'ExternalSubtitlesTrack':
               const externalIndex = ++externalCount
+              const sourceFile = getSubtitlesSourceFileFromFilesSubset(
+                externalFiles,
+                convertedFiles,
+                t.id
+              )
               return {
                 id: t.id,
                 relation: t,
                 externalIndex,
-                label: `External subtitles track ${externalIndex}`,
-                sourceFile: getSubtitlesSourceFileFromFilesSubset(
-                  externalFiles,
-                  convertedFiles,
-                  t.id
-                ),
+                label:
+                  sourceFile && 'name' in sourceFile
+                    ? sourceFile.name
+                    : `External subtitles track ${externalIndex}`,
+                sourceFile,
                 displayFile: getSubtitlesDisplayFileFromFilesSubset(
                   externalFiles,
                   convertedFiles,

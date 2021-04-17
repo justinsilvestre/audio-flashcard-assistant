@@ -67,6 +67,7 @@ const UNDOABLE_ACTIONS = new Set<Action['type']>([
   A.addClips,
   A.mergeClips,
   A.moveClip,
+  A.stretchClip,
 ])
 
 const HISTORY_CLEARING_ACTIONS = new Set<Action['type']>([

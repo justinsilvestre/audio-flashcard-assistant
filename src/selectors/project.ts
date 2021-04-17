@@ -18,7 +18,7 @@ import {
   ClipJson,
   ProjectJson,
 } from '../types/Project'
-import { msToSeconds } from '../utils/waveform'
+import { msToSeconds } from 'clipwave'
 
 const newestToOldest = (
   { lastOpened: a }: FileAvailability,
