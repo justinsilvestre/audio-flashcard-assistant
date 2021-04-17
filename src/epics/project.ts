@@ -145,6 +145,7 @@ const PROJECT_EDIT_ACTIONS = new Set<Action['type']>([
   A.addFlashcardTag,
   A.deleteFlashcardTag,
   A.editClip,
+  A.stretchClip,
   A.addClip,
   A.addClips,
   A.mergeClips,

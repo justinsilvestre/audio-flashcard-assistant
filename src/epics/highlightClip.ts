@@ -3,7 +3,7 @@ import { ofType, combineEpics } from 'redux-observable'
 import { EMPTY, of } from 'rxjs'
 import A from '../types/ActionType'
 import r from '../redux'
-import { msToSeconds, secondsToMs } from '../utils/waveform'
+import { msToSeconds, secondsToMs } from 'clipwave'
 
 const deselectOnOpenMediaFile: AppEpic = (action$) =>
   action$.pipe(

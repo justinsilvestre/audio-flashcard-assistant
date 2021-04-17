@@ -5,7 +5,7 @@ import r from '../redux'
 import A from '../types/ActionType'
 import { TransliterationFlashcardFields } from '../types/Project'
 import { getUpdateWith } from '../files/updates'
-import { msToSeconds } from '../utils/waveform'
+import { msToSeconds } from 'clipwave'
 
 const linkFieldToTrackRequest: AppEpic = (action$, state$) =>
   action$

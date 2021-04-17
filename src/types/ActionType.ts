@@ -25,6 +25,8 @@ const ActionTypes = {
   addFlashcardTag: 'addFlashcardTag',
   deleteFlashcardTag: 'deleteFlashcardTag',
   setDefaultClipSpecs: 'setDefaultClipSpecs',
+  addClipRequest: 'addClipRequest',
+  stretchClip: 'stretchClip',
   addClip: 'addClip',
   addClips: 'addClips',
   editClip: 'editClip',

@@ -1,5 +1,6 @@
 import React, {
   Fragment,
+  MutableRefObject,
   useCallback,
   useEffect,
   useRef,
@@ -14,9 +15,10 @@ import ProjectMenu from '../components/ProjectMenu'
 import headerCss from '../components/MainHeader.module.css'
 import { actions } from '../actions'
 import SubtitlesMenu from '../components/SubtitlesMenu'
-import { usePlayButtonSync } from './usePlayButtonSync'
-import { WaveformInterface } from './useWaveform'
+import { usePlayButtonSync, useWaveform } from 'clipwave'
 import { usePrevious } from '../utils/usePrevious'
+
+type WaveformInterface = ReturnType<typeof useWaveform>
 
 enum $ {
   container = 'main-screen-header',
@@ -27,10 +29,12 @@ const MainHeader = ({
   currentProjectId,
   currentMediaFile,
   waveform,
+  playerRef,
 }: {
   currentProjectId: string
   currentMediaFile: MediaFile | null
   waveform: WaveformInterface
+  playerRef: MutableRefObject<HTMLVideoElement | HTMLAudioElement | null>
 }) => {
   const dispatch = useDispatch()
   const deleteAllCurrentFileClipsRequest = useCallback(
@@ -50,7 +54,10 @@ const MainHeader = ({
     handleBlur,
   } = useAutoHide(currentMediaFile, currentProjectId)
 
-  const playButtonSync = usePlayButtonSync(waveform.state.pixelsPerSecond)
+  const playButtonSync = usePlayButtonSync(
+    waveform.state.pixelsPerSecond,
+    playerRef
+  )
 
   return (
     <header

@@ -8,7 +8,7 @@ import {
   setCursorX,
   SUBTITLES_CHUNK_HEIGHT,
   WAVEFORM_HEIGHT,
-} from '../utils/waveform'
+} from 'clipwave'
 import { $ } from './Waveform'
 import {
   SubtitlesCardBase,

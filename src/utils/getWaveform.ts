@@ -3,7 +3,7 @@ import tempy from 'tempy'
 import { existsSync } from 'fs'
 import { getFileAvailabilityById } from '../selectors'
 import { basename, join } from 'path'
-import { secondsToMs } from './waveform'
+import { secondsToMs } from 'clipwave'
 
 const WAVE_COLOR = '#b7cee0'
 const BG_COLOR = '#00000000'

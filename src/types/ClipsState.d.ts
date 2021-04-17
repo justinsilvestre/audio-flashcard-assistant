@@ -2,12 +2,15 @@ declare type WaveformX = number
 
 declare type ClipId = string
 
+declare type Milliseconds = number
+
 declare type Clip = {
   id: ClipId
-  start: WaveformX
-  end: WaveformX
+  start: Milliseconds
+  end: Milliseconds
   fileId: MediaFileId
   linkedSubtitlesChunk?: number
+  clipwaveType: 'Primary'
 }
 
 declare type ClipsState = {
